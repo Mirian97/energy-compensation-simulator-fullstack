@@ -90,3 +90,30 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .skeleton {
+    @apply relative overflow-hidden;
+
+    &::after {
+      inset: 0;
+      content: "";
+      position: absolute;
+      background: linear-gradient(
+        105deg,
+        #D3D3D3 40%,
+        #fff 50%,
+        #D3D3D3 60%
+      );
+      background-size: 300%;
+      background-position-x: 100%;
+      animation: shimmer 1s ease-in infinite;
+    }
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: 0%;
+  }
+}
