@@ -8,7 +8,7 @@ import { toast } from "../_utils/toast";
 const useLeadDetail = () => {
   const params = useParams<{ id: string }>();
   const [data, setData] = useState<Lead | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getLeads = () => {
     setIsLoading(true);

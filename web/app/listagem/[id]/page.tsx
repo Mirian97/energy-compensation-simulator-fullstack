@@ -17,7 +17,7 @@ import { consumoColumns } from "./_components/consume-columns";
 
 const Detalhes = () => {
   const router = useRouter();
-  const { data } = useLeadDetail();
+  const { data, isLoading } = useLeadDetail();
   const unidadeConsumidora = data?.unidades?.[0];
 
   return (
@@ -101,6 +101,7 @@ const Detalhes = () => {
               <DataTable
                 data={unidadeConsumidora?.historicoDeConsumoEmKWH || []}
                 columns={consumoColumns}
+                isLoading={isLoading}
               />
             </div>
           </div>
