@@ -21,11 +21,11 @@ export const leadColumns: ColumnDef<Lead>[] = [
   {
     accessorKey: "unidades",
     header: "Unidade",
-    cell: ({ row }) => row.original.unidades?.[0]?.codigoDaUnidadeConsumidora,
+    cell: ({ row }) => row.original.unidades?.[0]?.codigoDaUnidadeConsumidora || "-",
   },
   {
     accessorKey: "status",
-    header: () => <div className="text-center">Status</div>,
+    header: "Status",
     cell: () => <ChipStatus>Em análise</ChipStatus>,
   },
   {
@@ -34,7 +34,7 @@ export const leadColumns: ColumnDef<Lead>[] = [
     cell: ({ row }) => (
       <Link
         href={`/listagem/${row.original.id.toString()}`}
-        className="flex flex-row items-center justify-center gap-1 hover:text-primary"
+        className="flex flex-row items-center justify-center text-gray-500 gap-1 hover:text-primary"
       >
         <ExternalLink size={16} />
       </Link>
