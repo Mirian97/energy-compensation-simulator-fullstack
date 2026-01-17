@@ -7,7 +7,7 @@ import useLeads from "../_hooks/useLeads";
 import { leadColumns } from "./_components/lead-columns";
 
 const Listagem = () => {
-  const { data, search, setSearch } = useLeads();
+  const { data, search, setSearch, isLoading } = useLeads();
 
   return (
     <Card className="space-y-4 rounded-lg bg-white/80 px-4 pb-6 pt-3 shadow backdrop-blur-sm sm:px-6 md:py-6 lg:px-8">
@@ -23,7 +23,7 @@ const Listagem = () => {
           icon={<Search className="size-4" />}
         />
       </div>
-      <DataTable columns={leadColumns} data={data} />
+      <DataTable columns={leadColumns} data={data} isLoading={isLoading} />
     </Card>
   );
 };

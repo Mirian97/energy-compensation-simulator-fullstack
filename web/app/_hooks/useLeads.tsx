@@ -6,7 +6,7 @@ import { toast } from "../_utils/toast";
 
 const useLeads = () => {
   const [data, setData] = useState<Lead[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [search, setSearch] = useState<string>("");
 
   const getLeads = () => {
