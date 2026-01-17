@@ -60,7 +60,7 @@ export function DataTable<TData, TValue>({
               <TableRow key={index} >
                 {columns.map((_, colIndex) => (
                   <TableCell key={colIndex} >
-                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-[14px] w-full" />
                   </TableCell>
                 ))}
               </TableRow>
